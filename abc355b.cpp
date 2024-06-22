@@ -50,7 +50,7 @@ int main(){
     set<int> st(A.begin(),A.end());
 
     for(int i = 0; i<N+M-1;i++){
-        if(st.contains(C[i]) && st.contains(C[i+1])){
+        if(st.contains(C[i]) && st.contains(C[i+1])){ // versionに対応してないだけ
             cout << "Yes" << endl;
             return 0;
         }
