@@ -94,7 +94,7 @@ int main()
 int main(){
     int n,t;
     cin >> n >> t;
-    vector<int> row(n),col(n);
+    vector<int> row(n),col(n);// row ↓ colomn →
     int dia1 = 0, dia2 = 0;
     rep(ti,t){
         int a;
@@ -111,8 +111,8 @@ int main(){
         };
         add(row[i]);
         add(col[j]);
-        if(i == j) add(dia1);
-        if(i+j == n-1) add(dia2);
+        if(i == j) add(dia1);// "\"
+        if(i+j == n-1) add(dia2); // "/"
     }
     cout << -1 << endl;
     return 0;
