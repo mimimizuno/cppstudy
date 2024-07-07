@@ -6,6 +6,7 @@ int main(){
     cin >> N;
     vector<int> A(N);
     int ans = 0;
+    int change = 0;
     // int a,tmp,jj;
     for(auto &x:A) cin >> x;
     // for(int i = 0;i < N;i++){
@@ -25,18 +26,19 @@ int main(){
         int i = 0;
         int ans = 0;
         while(i < N){
-            if(A[i] > A[i+1]){
+            if((i < N-1) && (A[i] > A[i+1])){
                 cout << i+1 << " " << i+2 << endl;
+                change++;
                 swap(A[i],A[i+1]);
             }
             if(A[i] == i+1){
                 ans++;
             }
             if(ans == N){
+                if(!change) cout << 0 << endl;
                 return 0;
             }
             i++;
         }
-
     }
 }
