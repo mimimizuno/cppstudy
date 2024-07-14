@@ -12,15 +12,24 @@ int main(){
     for(int i = 0; i < N;i++){
         int a;
         cin >> a;
-        data.push_back(a % W +1);
-        data.push_back(a % W + 1 + W);
+        data.push_back(a % W);
+        data.push_back(a % W + W);
     }
+    // for(auto x:data) cout << x << " ";
+    // cout << endl;
     set <int> dataset(data.begin(),data.end());
+    // for(auto x:dataset) cout << x << " ";
+    // cout << endl;
     vector<int> ansdata(dataset.begin(),dataset.end());
-    for(int i = 0;i < (int)ansdata.size()/2 ;i++){
-        int tmp = ansdata[i + (int)ansdata.size()/2 - 1] - ansdata[i];
+    // for(auto x:ansdata) cout << x << " ";
+    // cout << endl;
+    for(int i = 0;i < (int)ansdata.size()/2+1;i++){
+        // cout << i + (int)ansdata.size()/2 -1 << endl;
+        int tmp = ansdata[i + (int)ansdata.size() / 2 - 1] - ansdata[i];
+        // cout<<tmp<<endl;
         ans = min(ans,tmp);
     }
+    // cout << "ans = " << ans << endl;
     if(ans < A) cout << "Yes" << endl;
     else cout << "No" << endl;
 }
