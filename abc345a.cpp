@@ -6,7 +6,7 @@ int main()
     string S;
     cin >> S;
     bool flag = false;
-    if (S[0] == '<' && S[(int)S.size() - 1] == '>')
+    if (S[0] == '<' && S[(int)S.size() - 1] == '>' && (int)S.size() > 2)
     {
         flag = true;
     }
