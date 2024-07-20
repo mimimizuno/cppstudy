@@ -15,22 +15,19 @@ int main(){
     for(auto &x:C) cin >> x;
     cin >> Q;
     vector<int> X(Q);
+    unordered_set<int> ans;
     vector<bool> flg(Q,false);
     for(auto &x:X) cin >> x;
-    for(int l = 0;l < Q;l++){
         for(int i = 0;i < N;i++){
             for(int j = 0;j < M;j++){
                 for(int k = 0;k < L;k++){
                     int tmp = A[i] + B[j] + C[k];
-                    if(tmp == X[l]){
-                        flg[l] = true;
-                    }
+                    ans.insert(tmp);
                 }
             }
         }
-    }
-    for(auto x: flg){
-        if(x == true) cout << "Yes" << endl;
+    for(auto x: X){
+        if(ans.count(x)) cout << "Yes" << endl;
         else cout << "No" << endl;
     }
 }
