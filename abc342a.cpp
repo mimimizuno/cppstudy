@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-
+// 解答は二重ループ
 int main(){
     string S;
     cin >> S;
